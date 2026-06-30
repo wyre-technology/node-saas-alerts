@@ -1,6 +1,6 @@
 {
   "name": "@wyre-technology/node-saas-alerts",
-  "version": "0.0.0-semantically-released",
+  "version": "1.0.0",
   "description": "Node.js client library for the Kaseya SaaS Alerts External Partner API",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -8,8 +8,14 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
-      "require": { "types": "./dist/index.d.cts", "default": "./dist/index.cjs" }
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     }
   },
   "scripts": {
@@ -23,11 +29,24 @@
     "clean": "rm -rf dist",
     "prepare": "npm run build"
   },
-  "keywords": ["saas-alerts", "kaseya", "api", "msp", "security", "alerts", "m365"],
+  "keywords": [
+    "saas-alerts",
+    "kaseya",
+    "api",
+    "msp",
+    "security",
+    "alerts",
+    "m365"
+  ],
   "author": "WYRE Technology",
   "license": "Apache-2.0",
-  "repository": { "type": "git", "url": "https://github.com/wyre-technology/node-saas-alerts.git" },
-  "bugs": { "url": "https://github.com/wyre-technology/node-saas-alerts/issues" },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wyre-technology/node-saas-alerts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wyre-technology/node-saas-alerts/issues"
+  },
   "homepage": "https://github.com/wyre-technology/node-saas-alerts#readme",
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
@@ -41,7 +60,16 @@
     "typescript": "^5.5.0",
     "vitest": "^2.0.0"
   },
-  "engines": { "node": ">=20" },
-  "publishConfig": { "registry": "https://npm.pkg.github.com" },
-  "files": ["dist", "README.md", "LICENSE", "CHANGELOG.md"]
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ]
 }
