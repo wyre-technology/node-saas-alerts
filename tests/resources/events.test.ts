@@ -51,6 +51,13 @@ describe('EventsResource', () => {
     expect(mockFetch.mock.calls[0][1]).toMatchObject({ method: 'POST', body: JSON.stringify({ scrollId: 'SCROLL123' }) });
   });
 
+  it('countAdvanced POSTs the ES body to /reports/events/count/query', async () => {
+    mockFetch.mockResolvedValueOnce(mockResponse({ count: 3 }));
+    await events.countAdvanced({ query: { match_all: {} } });
+    expect(mockFetch.mock.calls[0][0]).toContain('/reports/events/count/query');
+    expect(mockFetch.mock.calls[0][1]).toMatchObject({ method: 'POST', body: JSON.stringify({ query: { match_all: {} } }) });
+  });
+
   it('recommendedActions hits the alert-recommended-actions endpoint', async () => {
     mockFetch.mockResolvedValueOnce(mockResponse([{ action: 'reset' }]));
     expect(await events.recommendedActions()).toEqual([{ action: 'reset' }]);
